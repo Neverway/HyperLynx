@@ -45,12 +45,14 @@ public class WB_Pause : MonoBehaviour
         buttonSettings.onClick.AddListener(delegate { OnClick("buttonSettings"); });
         buttonTitle.onClick.AddListener(delegate { OnClick("buttonTitle"); });
         buttonQuit.onClick.AddListener(delegate { OnClick("buttonQuit"); });
-        buttonRestart.onClick.AddListener(delegate { OnClick("buttonRestart"); });
+        //buttonRestart.onClick.AddListener(delegate { OnClick("buttonRestart"); });
     }
 
     private void OnDestroy()
     {
-        Destroy(widgetManager.GetExistingWidget(settingsWidget.name));
+        widgetManager = FindObjectOfType<GI_WidgetManager>();
+        var target = widgetManager.GetExistingWidget(settingsWidget.name);
+        if (target) Destroy(target);
     }
 
 
@@ -80,6 +82,11 @@ public class WB_Pause : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 break;
         }
+    }
+
+    public void Close()
+    {
+        Destroy(gameObject);
     }
 
 

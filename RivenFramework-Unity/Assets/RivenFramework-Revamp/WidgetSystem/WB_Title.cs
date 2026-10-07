@@ -49,12 +49,12 @@ public class WB_Title : MonoBehaviour
         worldLoader = FindObjectOfType<GI_WorldLoader>();
         //levelLoader = FindObjectOfType<LevelManager>();
         buttonMainGame.onClick.AddListener(delegate { OnClick("buttonMainGame"); });
-        buttonExtras.onClick.AddListener(delegate { OnClick("buttonExtras"); });
-        buttonRanking.onClick.AddListener(delegate { OnClick("buttonRanking"); });
+        /*buttonExtras.onClick.AddListener(delegate { OnClick("buttonExtras"); });
+        buttonRanking.onClick.AddListener(delegate { OnClick("buttonRanking"); });*/
         buttonSettings.onClick.AddListener(delegate { OnClick("buttonSettings"); });
         buttonQuit.onClick.AddListener(delegate { OnClick("buttonQuit"); });
         buttonCredits.onClick.AddListener(delegate { OnClick("buttonCredits"); });
-        buttonLanguage.onClick.AddListener(delegate { OnClick("buttonLanguage"); });
+        //buttonLanguage.onClick.AddListener(delegate { OnClick("buttonLanguage"); });
     }
 
     private void Update()

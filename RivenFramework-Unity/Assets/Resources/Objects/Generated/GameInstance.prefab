@@ -244,7 +244,7 @@ MonoBehaviour:
     verticalLookSpeed: 0.75
     joystickLookSensitivity: 0.9
     mouseLookSensitivity: 0.5
-    cameraFov: 90
+    cameraFov: 60
     hideTextChat: 0
     enablePushToTalk: 0
     brightness: 1
@@ -324,7 +324,7 @@ MonoBehaviour:
     verticalLookSpeed: 0.75
     joystickLookSensitivity: 0.9
     mouseLookSensitivity: 0.5
-    cameraFov: 90
+    cameraFov: 60
     hideTextChat: 0
     enablePushToTalk: 0
     brightness: 1
@@ -374,7 +374,7 @@ MonoBehaviour:
     verticalLookSpeed: 0.75
     joystickLookSensitivity: 0.9
     mouseLookSensitivity: 0.5
-    cameraFov: 90
+    cameraFov: 60
     hideTextChat: 0
     enablePushToTalk: 0
     brightness: 1

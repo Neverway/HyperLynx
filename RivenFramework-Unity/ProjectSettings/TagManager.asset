@@ -15,6 +15,7 @@ TagManager:
   - '[StructureContainer]'
   - TilemapContainer
   - AssetContainer
+  - Platform
   layers:
   - Default
   - TransparentFX

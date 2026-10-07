@@ -7,6 +7,7 @@
 //
 //====================================================================================================================//
 
+using RivenFramework;
 using UnityEngine;
 
 /// <summary>
@@ -40,7 +41,8 @@ public class LB_World : MonoBehaviour
     /*-----[ Mono Functions ]-----------------------------------------------------------------------------------------*/
     private void Start()
     {
-        widgetManager = FindObjectOfType<GI_WidgetManager>();
+        widgetManager = GameInstance.Get<GI_WidgetManager>();
+        Debug.Log(widgetManager);
         widgetManager.AddWidget(HUDWidgetPrefab);
     }
     

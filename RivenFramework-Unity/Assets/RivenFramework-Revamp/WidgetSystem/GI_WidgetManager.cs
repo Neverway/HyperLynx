@@ -121,7 +121,7 @@ public class GI_WidgetManager : MonoBehaviour
         newWidget.transform.localScale = Vector3.one;
         newWidget.name = _widgetObject.name;
         lastCreatedWidget = newWidget;
-        OnNewWidgetCreated.Invoke();
+        OnNewWidgetCreated?.Invoke();
         return true;
     }
 
