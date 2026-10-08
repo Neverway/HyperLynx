@@ -35,6 +35,7 @@ public class DSPawn_Player : DSPawn
     [SerializeField] private GameObject DeathScreenWidget;
     [SerializeField] private Pawn_Inventory playerInventory;
     private ApplicationSettings applicationSettings;
+    public Animator animator;
     
     #endregion
 
@@ -86,6 +87,7 @@ public class DSPawn_Player : DSPawn
         
         // Enable the view camera
         //action.EnableViewCamera(this, true);
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void Update()
@@ -119,9 +121,20 @@ public class DSPawn_Player : DSPawn
         
         ApplyMovement();
         ApplyRotation();
-        
-        if (physicsbody.velocity.y < 0 && !action.isFastFalling && !action.IsOnGround(this))
-            physicsbody.velocity += Vector3.up * Physics.gravity.y * DSCurrentStats.fallForce * Time.fixedDeltaTime;
+
+        if (action.isJumping && !action.isFastFalling) animator.Play("Jumping");
+        if (physicsbody.velocity.y < 0 && !action.IsOnGround(this))
+        {
+            if (!action.isFastFalling)
+            {
+                animator.Play("Falling");
+                physicsbody.velocity += Vector3.up * Physics.gravity.y * DSCurrentStats.fallForce * Time.fixedDeltaTime;
+            }
+            if (action.isFastFalling)
+            {
+                animator.Play("FastFalling");
+            }
+        }
     }
 
     /*-----[ Internal Functions ]-------------------------------------------------------------------------------------*/
@@ -131,6 +144,7 @@ public class DSPawn_Player : DSPawn
     private void UpdateMovement()
     {
         moveDirection = new Vector3(inputActions.Move.ReadValue<Vector2>().x, 0, inputActions.Move.ReadValue<Vector2>().y);
+        animator.SetFloat("MoveX", moveDirection.x);
     }
     private void ApplyMovement()
     {

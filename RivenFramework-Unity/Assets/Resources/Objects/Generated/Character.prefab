@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4054097890446054156}
-  - component: {fileID: 193188356055244760}
   - component: {fileID: 2124525768027106009}
   - component: {fileID: 3044868591021723970}
+  - component: {fileID: 2468578036518729287}
   m_Layer: 11
-  m_Name: Player
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,69 +35,6 @@ Transform:
   - {fileID: 4302569717779601332}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &193188356055244760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570639244220686211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ada76a42588eeb7fa31e95ba7a5ecb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: Player
-  displayName: Player
-  uniqueId: 
-  isPaused: 1
-  isDead: 0
-  despawnOnDeath: 0
-  despawnOnDeathDelay: 3
-  viewPoint: {fileID: 0}
-  physObjectAttachmentPoint: {fileID: 0}
-  networkPlayerName: 
-  visiblePawns: []
-  visibleHostiles: []
-  visibleAllies: []
-  WantsToDrop: 0
-  DSDefaultStats:
-    health: 100
-    invulnerabilityTime: 0.5
-    team: 
-    alliedTeams: []
-    opposedTeams: []
-    movementSpeed: 4.5
-    airMovementMultiplier: 1
-    crouchMovementMultiplier: 1
-    groundAccelerationRate: 0.5
-    airAccelerationRate: 0.2
-    slopeAccelerationRate: 0.5
-    groundDrag: 25
-    airDrag: 0
-    slopeDrag: 25
-    slopeCheckDistance: 0.25
-    groundMask:
-      serializedVersion: 2
-      m_Bits: 8321
-    groundCheckRadius: 0.2
-    groundCheckOffset: {x: 0, y: 0, z: 0}
-    jumpForce: 15
-    coyoteTime: 0.25
-    jumpCutGravity: 5
-    fallForce: 1
-    fastFallSpeed: 20
-    fastFallAcceleration: 150
-    headCheckRadius: 0.25
-    headCheckOffset: {x: 0, y: 1.75, z: 0}
-    headCheckDistance: 0.5
-    crouchDistance: 0.5
-    crouchColliderOffset: {x: 0, y: 0.25, z: 0}
-  physicsbody: {fileID: 0}
-  interactionPrefab: {fileID: 0}
-  DeathScreenWidget: {fileID: 5675289539813747590, guid: f951f1626e8a081628c8e41d018c0094,
-    type: 3}
-  playerInventory: {fileID: 0}
 --- !u!54 &2124525768027106009
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121,7 +58,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
@@ -142,10 +79,23 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.9221492, z: 0.5}
   m_Center: {x: 0, y: 0.5389254, z: 0}
+--- !u!114 &2468578036518729287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570639244220686211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a916fede66bc74b74bbb3498631df4f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7878449999030701518}
 --- !u!1001 &2362420400448028350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -517,6 +467,12 @@ PrefabInstance:
 --- !u!4 &4302569717779601332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1980682832087623946, guid: f50ea522b7d669574b832f042e7935d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2362420400448028350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7878449999030701518 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5592591532393886576, guid: f50ea522b7d669574b832f042e7935d5,
     type: 3}
   m_PrefabInstance: {fileID: 2362420400448028350}
   m_PrefabAsset: {fileID: 0}

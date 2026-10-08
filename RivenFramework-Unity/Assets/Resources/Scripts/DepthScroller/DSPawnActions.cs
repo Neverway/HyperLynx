@@ -25,7 +25,7 @@ public class DSPawnActions : PawnActions
     private GameObject viewCamera;
     private float lastGroundedTime = float.NegativeInfinity;
     private float lastJumpTime = float.NegativeInfinity;
-    private bool isJumping;
+    public bool isJumping;
     public bool jumpHeld;
     public bool isFastFalling;
     private Collider bodyCollider;
@@ -400,7 +400,7 @@ public class DSPawnActions : PawnActions
 
         var stats = (DSPawnStats)_pawn.currentStats;
         int count = Physics.OverlapSphereNonAlloc(
-            _pawn.transform.position - stats.groundCheckOffset + crouchingOffset,
+            _pawn.transform.position - stats.groundCheckOffset,
             stats.groundCheckRadius, groundHits, stats.groundMask, QueryTriggerInteraction.Ignore);
 
         for (int i = 0; i < count; i++)

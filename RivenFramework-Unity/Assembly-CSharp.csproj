@@ -176,6 +176,7 @@
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Extensions/TransformHelper.cs" />
      <Compile Include="Assets/Resources/Widgets/WB_Pause.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Importers/UnrealGold/T3dMapConverter.cs" />
+     <Compile Include="Assets/Resources/Scripts/Haiypur.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Core/CSG/Vertex.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Importers/UnrealGold/T3dBrush.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Compatibility/Vector2Int.cs" />
@@ -582,6 +583,7 @@
      <Folder Include="Assets/Resources/Other/IntegratableSystems/WidgetNavigator" />
      <Folder Include="Assets/RivenFramework-Revamp" />
      <Folder Include="Assets/Packages/Xelu_Prompts/Others/VR/Vive" />
+     <Folder Include="Assets/Resources/Sprites/Characters/Linx" />
      <Folder Include="Assets/Packages/Xelu_Prompts/Others/PS Vita" />
      <Folder Include="Assets/Resources/Scripts/Integratable/Graphics" />
      <Folder Include="Assets/Resources/Other/IntegratableSystems/Assorted" />
