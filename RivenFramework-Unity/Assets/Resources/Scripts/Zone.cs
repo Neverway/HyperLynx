@@ -82,6 +82,7 @@ public class Zone : MonoBehaviour
     /*-----[ Internal Variables ]-------------------------------------------------------------------------------------*/
     [Tooltip("A list of all of the currently created depth layers, used for drawing and whatnot")]
     public List<GameObject> depthLayers = new List<GameObject>();
+    private const string LayersHolderName = "Depth Layers";
     private const string OrphanHolderName = "Removed Layer Content";
     #if UNITY_EDITOR
     private bool rebuildQueued;
@@ -93,7 +94,6 @@ public class Zone : MonoBehaviour
     private Tween stepTween;
     public bool IsShifting => isShifting;
     public event Action<int> OnDepthChanged;
-
 
 
     /*-----[ Reference Variables ]------------------------------------------------------------------------------------*/
@@ -199,12 +199,14 @@ public class Zone : MonoBehaviour
         depthLayers.RemoveAll(l => l == null);
         Undo.RecordObject(this, "Resize Zone Depth");
         AdoptExistingLayers();
+        
+        Transform layersHolder = GetOrCreateLayersHolder();
 
         while (depthLayers.Count < depthCount)
         {
             GameObject layer = PrefabUtility.IsPartOfPrefabAsset(depthLayerPrefab)
-                ? (GameObject)PrefabUtility.InstantiatePrefab(depthLayerPrefab, transform)
-                : Instantiate(depthLayerPrefab, transform);
+                ? (GameObject)PrefabUtility.InstantiatePrefab(depthLayerPrefab, layersHolder)
+                : Instantiate(depthLayerPrefab, layersHolder);
             Undo.RegisterCreatedObjectUndo(layer, "Add Depth Layer");
             depthLayers.Add(layer);
         }
@@ -273,20 +275,24 @@ public class Zone : MonoBehaviour
     
     private void AdoptExistingLayers()
     {
+        Transform holder = GetOrCreateLayersHolder();
+
         var found = new List<KeyValuePair<int, GameObject>>();
-        foreach (Transform child in transform)
-        {
-            const string prefix = "Depth Layer ";
-            if (child.name.StartsWith(prefix) && int.TryParse(child.name.Substring(prefix.Length), out int n))
-            {
-                found.Add(new KeyValuePair<int, GameObject>(n, child.gameObject));
-            }
-        }
+        CollectLayers(holder, found);
+        CollectLayers(transform, found);
 
         found.Sort((a, b) => a.Key.CompareTo(b.Key));
 
         depthLayers.Clear();
-        foreach (var pair in found) depthLayers.Add(pair.Value);
+        foreach (var pair in found)
+        {
+            Transform t = pair.Value.transform;
+            if (t.parent != holder)
+            {
+                Undo.SetTransformParent(t, holder, "Move Depth Layer Into Holder");
+            }
+            depthLayers.Add(pair.Value);
+        }
     }
     
     [ContextMenu("Refresh Zone")]
@@ -298,6 +304,31 @@ public class Zone : MonoBehaviour
         SyncLayers();
         ApplyLayout();
         EditorUtility.SetDirty(this);
+    }
+    
+    private Transform GetOrCreateLayersHolder()
+    {
+        Transform holder = transform.Find(LayersHolderName);
+        if (holder == null)
+        {
+            var go = new GameObject(LayersHolderName);
+            Undo.RegisterCreatedObjectUndo(go, "Create Depth Layers Holder");
+            go.transform.SetParent(transform, false);
+            holder = go.transform;
+        }
+        return holder;
+    }
+
+    private static void CollectLayers(Transform parent, List<KeyValuePair<int, GameObject>> results)
+    {
+        const string prefix = "Depth Layer ";
+        foreach (Transform child in parent)
+        {
+            if (child.name.StartsWith(prefix) && int.TryParse(child.name.Substring(prefix.Length), out int n))
+            {
+                results.Add(new KeyValuePair<int, GameObject>(n, child.gameObject));
+            }
+        }
     }
 #endif
     

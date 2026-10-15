@@ -35,8 +35,6 @@ public class LB_Title : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         widgetManager = GameInstance.Get<GI_WidgetManager>();
-        print(widgetManager);
-        print(titleWidget);
         widgetManager.AddWidget(titleWidget);
     }
 

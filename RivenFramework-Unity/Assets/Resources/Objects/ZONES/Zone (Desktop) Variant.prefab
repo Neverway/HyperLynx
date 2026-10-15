@@ -217,6 +217,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.04454434
       objectReference: {fileID: 0}
+    - target: {fileID: 949633994139506478, guid: 4f073dec10bb02683b7b072e26f56639,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 986911717782348971, guid: 4f073dec10bb02683b7b072e26f56639,
         type: 3}
       propertyPath: m_Color.a
@@ -246,6 +251,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449634044921634507, guid: 4f073dec10bb02683b7b072e26f56639,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1463101318790211676, guid: 4f073dec10bb02683b7b072e26f56639,
         type: 3}
@@ -353,6 +363,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 2687262481000685131, guid: 4f073dec10bb02683b7b072e26f56639,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2738637463934114975, guid: 4f073dec10bb02683b7b072e26f56639,
         type: 3}
       propertyPath: m_Color.a
@@ -392,6 +407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Depth Layer 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243533451464236443, guid: 4f073dec10bb02683b7b072e26f56639,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3291459574092549359, guid: 4f073dec10bb02683b7b072e26f56639,
         type: 3}
@@ -693,6 +713,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.04454434
       objectReference: {fileID: 0}
+    - target: {fileID: 6308460621569401681, guid: 4f073dec10bb02683b7b072e26f56639,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6439873954423085741, guid: 4f073dec10bb02683b7b072e26f56639,
         type: 3}
       propertyPath: depthCount
@@ -986,7 +1011,7 @@ PrefabInstance:
     - target: {fileID: 7302604959711471785, guid: 4f073dec10bb02683b7b072e26f56639,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12
+      value: -188
       objectReference: {fileID: 0}
     - target: {fileID: 7373722614265353088, guid: 4f073dec10bb02683b7b072e26f56639,
         type: 3}
@@ -1096,7 +1121,7 @@ PrefabInstance:
     - target: {fileID: 8219892275162166265, guid: 4f073dec10bb02683b7b072e26f56639,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8241478909572177011, guid: 4f073dec10bb02683b7b072e26f56639,
         type: 3}

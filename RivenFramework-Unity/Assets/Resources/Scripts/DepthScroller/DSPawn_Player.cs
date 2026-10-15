@@ -309,9 +309,9 @@ public class DSPawn_Player : DSPawn
     private IEnumerator ChangeZonesCo()
     {
         physicsbody.isKinematic = true;
-        gameObject.transform.DOLocalMove(new Vector3(0, -3, 0), 0.25f);
+        gameObject.transform.DOLocalMove(new Vector3(0, -3, 0), 0.75f);
         animator.Play("Falling");
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1f);
         isPaused = false;
         physicsbody.isKinematic = false;
     }

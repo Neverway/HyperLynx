@@ -45,7 +45,6 @@ public class LB_World : MonoBehaviour
     private IEnumerator Start()
     {
         widgetManager = GameInstance.Get<GI_WidgetManager>();
-        Debug.Log(widgetManager);
         widgetManager.AddWidget(HUDWidgetPrefab);
         yield return new WaitForEndOfFrame();
         
