@@ -95,6 +95,7 @@ namespace RivenFramework
         }
 
         public static Coroutine SendCoroutine(IEnumerator coroutine) => Instance.StartCoroutine(coroutine);
+        public static void StopCoroutine(IEnumerator coroutine) => StopCoroutine(coroutine);
     }
 }
 

@@ -8,6 +8,7 @@
 //====================================================================================================================//
 
 using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,6 +52,12 @@ public class WB_HUD : MonoBehaviour
     {
         SetCustomAppearance(CursorAppearance.Custom);
         player = FindObjectOfType<DSPawn_Player>();
+        if (player)
+        {
+            player.OnPawnHurt -= OnPlayerModifyHealth;
+            player.OnPawnHurt += OnPlayerModifyHealth;
+            OnPlayerModifyHealth();
+        }
     }
 
     private void Update()
@@ -58,10 +65,14 @@ public class WB_HUD : MonoBehaviour
         if (!player)
         {
             player = FindObjectOfType<DSPawn_Player>();
+            if (player)
+            {
+                player.OnPawnHurt -= OnPlayerModifyHealth;
+                player.OnPawnHurt += OnPlayerModifyHealth;
+                OnPlayerModifyHealth();
+            }
             return;
         }
-        cpuText.text = $"{player.currentStats.health}%";
-        cpuBar.fillAmount = (player.currentStats.health / player.defaultStats.health) * 100;
     }
 
     /*-----[ Internal Functions ]-------------------------------------------------------------------------------------*/
@@ -76,6 +87,13 @@ public class WB_HUD : MonoBehaviour
                 Cursor.SetCursor(customCursor, hotspot, cursorMode);
                 break;
         }
+    }
+
+    private void OnPlayerModifyHealth(DamageInfo obj = default)
+    {
+        cpuText.text = $"{player.currentStats.health}%";
+        cpuBar.DOFillAmount(player.currentStats.health / player.defaultStats.health, 0.25f);
+        cpuBar.gameObject.transform.parent.DOShakePosition(0.125f, new Vector3(4, 0, 0));
     }
 
 

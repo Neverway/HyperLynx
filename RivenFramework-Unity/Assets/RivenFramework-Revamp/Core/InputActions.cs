@@ -3105,6 +3105,24 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""StepForwards"",
+                    ""type"": ""Button"",
+                    ""id"": ""e7eb92dc-b0e4-4b7c-a9b0-0335e24b6fff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StepBackwards"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad749f34-c2c9-4031-9c1c-c49883e1b985"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""JumpAndKick"",
                     ""type"": ""Button"",
                     ""id"": ""a8ddb891-fc91-4ed9-bc45-50fb2c21936e"",
@@ -3166,7 +3184,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""JumpAndKick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3177,7 +3195,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""JumpAndKick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3188,7 +3206,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Fall"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3199,7 +3217,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Fall"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3210,7 +3228,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3221,7 +3239,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3232,7 +3250,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3243,7 +3261,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3254,7 +3272,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""LeftAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3265,7 +3283,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""LeftAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3276,7 +3294,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""RightAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3287,7 +3305,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""RightAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -3456,6 +3474,72 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e03a9164-ec2a-46f3-b60c-22d9fed990a1"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""StepForwards"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a69fa8df-7f94-429b-9c1e-33ca1ea19539"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""StepForwards"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""72f6c850-8dba-4f9f-b477-9ca05c0b4967"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""StepForwards"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3c9ca4b-409e-4458-90d8-b05a8061a2c9"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""StepBackwards"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dc7573ab-2aab-4248-81a6-a2aefd13808b"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""StepBackwards"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c50836e8-5a4a-40f7-a56e-d1f7a8225d06"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""StepBackwards"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -3563,6 +3647,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // DepthScroller
         m_DepthScroller = asset.FindActionMap("DepthScroller", throwIfNotFound: true);
         m_DepthScroller_Move = m_DepthScroller.FindAction("Move", throwIfNotFound: true);
+        m_DepthScroller_StepForwards = m_DepthScroller.FindAction("StepForwards", throwIfNotFound: true);
+        m_DepthScroller_StepBackwards = m_DepthScroller.FindAction("StepBackwards", throwIfNotFound: true);
         m_DepthScroller_JumpAndKick = m_DepthScroller.FindAction("JumpAndKick", throwIfNotFound: true);
         m_DepthScroller_Fall = m_DepthScroller.FindAction("Fall", throwIfNotFound: true);
         m_DepthScroller_LeftAction = m_DepthScroller.FindAction("LeftAction", throwIfNotFound: true);
@@ -4345,6 +4431,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_DepthScroller;
     private List<IDepthScrollerActions> m_DepthScrollerActionsCallbackInterfaces = new List<IDepthScrollerActions>();
     private readonly InputAction m_DepthScroller_Move;
+    private readonly InputAction m_DepthScroller_StepForwards;
+    private readonly InputAction m_DepthScroller_StepBackwards;
     private readonly InputAction m_DepthScroller_JumpAndKick;
     private readonly InputAction m_DepthScroller_Fall;
     private readonly InputAction m_DepthScroller_LeftAction;
@@ -4356,6 +4444,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         private @InputActions m_Wrapper;
         public DepthScrollerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_DepthScroller_Move;
+        public InputAction @StepForwards => m_Wrapper.m_DepthScroller_StepForwards;
+        public InputAction @StepBackwards => m_Wrapper.m_DepthScroller_StepBackwards;
         public InputAction @JumpAndKick => m_Wrapper.m_DepthScroller_JumpAndKick;
         public InputAction @Fall => m_Wrapper.m_DepthScroller_Fall;
         public InputAction @LeftAction => m_Wrapper.m_DepthScroller_LeftAction;
@@ -4374,6 +4464,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @StepForwards.started += instance.OnStepForwards;
+            @StepForwards.performed += instance.OnStepForwards;
+            @StepForwards.canceled += instance.OnStepForwards;
+            @StepBackwards.started += instance.OnStepBackwards;
+            @StepBackwards.performed += instance.OnStepBackwards;
+            @StepBackwards.canceled += instance.OnStepBackwards;
             @JumpAndKick.started += instance.OnJumpAndKick;
             @JumpAndKick.performed += instance.OnJumpAndKick;
             @JumpAndKick.canceled += instance.OnJumpAndKick;
@@ -4399,6 +4495,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @StepForwards.started -= instance.OnStepForwards;
+            @StepForwards.performed -= instance.OnStepForwards;
+            @StepForwards.canceled -= instance.OnStepForwards;
+            @StepBackwards.started -= instance.OnStepBackwards;
+            @StepBackwards.performed -= instance.OnStepBackwards;
+            @StepBackwards.canceled -= instance.OnStepBackwards;
             @JumpAndKick.started -= instance.OnJumpAndKick;
             @JumpAndKick.performed -= instance.OnJumpAndKick;
             @JumpAndKick.canceled -= instance.OnJumpAndKick;
@@ -4532,6 +4634,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IDepthScrollerActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnStepForwards(InputAction.CallbackContext context);
+        void OnStepBackwards(InputAction.CallbackContext context);
         void OnJumpAndKick(InputAction.CallbackContext context);
         void OnFall(InputAction.CallbackContext context);
         void OnLeftAction(InputAction.CallbackContext context);

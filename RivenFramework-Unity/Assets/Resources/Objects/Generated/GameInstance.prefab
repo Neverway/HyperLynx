@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 1249841930750964347}
   - component: {fileID: 4662360372656819566}
   - component: {fileID: 5663611723246624689}
+  - component: {fileID: 5562213470515438678}
+  - component: {fileID: 1384459178968480311}
   m_Layer: 0
   m_Name: GameInstance
   m_TagString: Untagged
@@ -989,3 +991,60 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5562213470515438678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298151654670827244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58ee24a81aaad50c94341b2fb383c45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZoneEntries:
+  - zoneObject: {fileID: 1137717531657683250, guid: b01e96be1e1164da3930942ac8435772,
+      type: 3}
+    zoneState: 1
+  - zoneObject: {fileID: 7294988653502046964, guid: 1e5bfde92eb86da74809d697f7bcc197,
+      type: 3}
+    zoneState: 1
+  currentCreatedZone: {fileID: 0}
+--- !u!114 &1384459178968480311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298151654670827244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbe3f41011419c6b86341f8968c7033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Musics:
+  - identifier: 0
+    audioFile: {fileID: 0}
+  - identifier: 1
+    audioFile: {fileID: 0}
+  - identifier: 2
+    audioFile: {fileID: 8300000, guid: 0e93533cc180a2b329eaf7f74160f713, type: 3}
+  - identifier: 3
+    audioFile: {fileID: 8300000, guid: 2e3cfeb5b6a4ee03a9b7562b46483eb7, type: 3}
+  - identifier: 4
+    audioFile: {fileID: 8300000, guid: 2e3cfeb5b6a4ee03a9b7562b46483eb7, type: 3}
+  - identifier: 5
+    audioFile: {fileID: 8300000, guid: 2e3cfeb5b6a4ee03a9b7562b46483eb7, type: 3}
+  - identifier: 6
+    audioFile: {fileID: 8300000, guid: 928a63e569c09cc1ebd19e583496e42e, type: 3}
+  - identifier: 7
+    audioFile: {fileID: 8300000, guid: 928a63e569c09cc1ebd19e583496e42e, type: 3}
+  - identifier: 8
+    audioFile: {fileID: 0}
+  - identifier: 9
+    audioFile: {fileID: 0}
+  - identifier: 10
+    audioFile: {fileID: 0}
+  - identifier: 11
+    audioFile: {fileID: 0}

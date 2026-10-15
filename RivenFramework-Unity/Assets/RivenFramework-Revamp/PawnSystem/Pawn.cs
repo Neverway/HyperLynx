@@ -83,18 +83,6 @@ public class Pawn : Actor
             _info = statusEffect.OnModifyHealth(_info);
         }
 
-        switch (_info.amount)
-        {
-            case > 0:
-                OnPawnHeal?.Invoke(_info);
-                isDead = false;
-                break;
-            case < 0:
-                if (isDead) return;
-                OnPawnHurt?.Invoke(_info);
-            break;
-        }
-
         if (currentStats.health + _info.amount <= 0)
         {
             Kill(_info);
@@ -107,6 +95,18 @@ public class Pawn : Actor
         foreach (var statusEffect in _info.statusEffects)
         {
             statusEffect.Apply(this);
+        }
+
+        switch (_info.amount)
+        {
+            case > 0:
+                isDead = false;
+                OnPawnHeal?.Invoke(_info);
+                break;
+            case < 0:
+                if (isDead) return;
+                OnPawnHurt?.Invoke(_info);
+                break;
         }
     }
 

@@ -5,11 +5,14 @@
 //
 //=============================================================================
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RivenFramework;
+using Object = UnityEngine.Object;
 
+[Serializable]
 public class DSPawnActions : PawnActions
 {
     //=-----------------=
@@ -28,8 +31,13 @@ public class DSPawnActions : PawnActions
     public bool isJumping;
     public bool jumpHeld;
     public bool isFastFalling;
+    public bool isKicking;
+    public bool isChargingSuperKick;
     private Collider bodyCollider;
     private readonly Collider[] groundHits = new Collider[8];
+    [SerializeField] private bool superKickReady;
+    private Coroutine superKickCo;
+    private Coroutine kickCo;
 
 
     //=-----------------=
@@ -282,7 +290,63 @@ public class DSPawnActions : PawnActions
 
     public void Kick(DSPawn _pawn)
     {
-        
+        if (isKicking || isChargingSuperKick) return;
+        kickCo = GameInstance.SendCoroutine(KickCooldown(_pawn));
+    }
+
+    public IEnumerator KickCooldown(DSPawn _pawn)
+    {
+        isKicking = true;
+        _pawn.animator.Play("Kick");
+        yield return new WaitForSeconds(0.3f);
+        isKicking = false;
+    }
+
+    public void SuperKickStart(DSPawn _pawn)
+    {
+        isChargingSuperKick = true;
+        isKicking = true;
+        superKickReady = false;
+        _pawn.animator.Play("SuperKickCharge");
+        _pawn.animator.SetBool("ChargingSuperKick", isChargingSuperKick);
+        superKickCo = GameInstance.SendCoroutine(SuperKickCharge(_pawn));
+    }
+
+    public void SuperKickRelease(DSPawn _pawn)
+    {
+        isChargingSuperKick = false;
+        _pawn.animator.SetBool("ChargingSuperKick", isChargingSuperKick);
+
+        if (superKickReady)
+        {
+            kickCo = GameInstance.SendCoroutine(SuperKickCooldown(_pawn));
+            superKickReady = false;
+        }
+        else
+        {
+            GameInstance.Get<GameInstance>().StopCoroutine(superKickCo);
+            isKicking = false;
+        }
+    }
+
+    public IEnumerator SuperKickCooldown(DSPawn _pawn)
+    {
+        yield return new WaitForSeconds(0.5f);
+        isKicking = false;
+    }
+
+    public IEnumerator SuperKickCharge(DSPawn _pawn)
+    {
+        yield return new WaitForSeconds(1f);
+        superKickReady = true;
+    }
+
+    public void CancelKicks(DSPawn _pawn)
+    {
+        if (superKickCo != null) GameInstance.Get<GameInstance>().StopCoroutine(superKickCo);
+        if (kickCo != null) GameInstance.Get<GameInstance>().StopCoroutine(kickCo);
+        isKicking = isChargingSuperKick = superKickReady = false;
+        _pawn.animator.SetBool("ChargingSuperKick", false);
     }
     
     /// <summary>

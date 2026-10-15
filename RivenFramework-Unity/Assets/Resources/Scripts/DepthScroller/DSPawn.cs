@@ -35,6 +35,7 @@ public class DSPawn : Pawn
     
     [HideInInspector] public Rigidbody physicsbody;
     [SerializeField] public GameObject interactionPrefab;
+    public Animator animator;
 
 
     //=-----------------=
@@ -45,6 +46,7 @@ public class DSPawn : Pawn
         // Get references
         physicsbody = GetComponent<Rigidbody>();
         viewPoint = transform.Find("ViewPoint");
+        animator = GetComponentInChildren<Animator>();
 
         defaultStats = DSDefaultStats;
         currentStats = (DSPawnStats)DSDefaultStats.Clone(); // Don't forget to clone so that you don't overwrite the pawns default values! ~Liz

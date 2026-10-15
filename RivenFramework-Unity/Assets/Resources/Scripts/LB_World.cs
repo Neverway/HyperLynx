@@ -7,6 +7,7 @@
 //
 //====================================================================================================================//
 
+using System.Collections;
 using RivenFramework;
 using UnityEngine;
 
@@ -32,6 +33,8 @@ public class LB_World : MonoBehaviour
     // TODO: This may be better changed from GameObject to reference a parent WB_HUD class
     [Tooltip("A reference to the HUD widget prefab to draw to the UI")]
     [SerializeField] private GameObject HUDWidgetPrefab;
+
+    public GameObject startingZone;
     
     #endregion
     
@@ -39,11 +42,14 @@ public class LB_World : MonoBehaviour
     #region=======================================( Functions )=======================================================//
     
     /*-----[ Mono Functions ]-----------------------------------------------------------------------------------------*/
-    private void Start()
+    private IEnumerator Start()
     {
         widgetManager = GameInstance.Get<GI_WidgetManager>();
         Debug.Log(widgetManager);
         widgetManager.AddWidget(HUDWidgetPrefab);
+        yield return new WaitForEndOfFrame();
+        
+        GameInstance.Get<ZoneManager>().LoadZone(startingZone);
     }
     
     /*-----[ Internal Functions ]-------------------------------------------------------------------------------------*/
