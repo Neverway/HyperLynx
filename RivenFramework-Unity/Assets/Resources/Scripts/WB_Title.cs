@@ -72,8 +72,9 @@ public class WB_Title : MonoBehaviour
             case "buttonMainGame":
                 if (!worldLoader) worldLoader = FindObjectOfType<GI_WorldLoader>();
                 //if (!levelLoader) levelLoader = FindObjectOfType<LevelManager>();
-                worldLoader.LoadWorld(targetLevelID);
+                //worldLoader.LoadWorld(targetLevelID);
                 // levelLoader.Load("", true); // Replace with function to load save file level
+                GI_SaveSystem.LoadGame();
                 break;
             case "buttonExtras":
                 if (!widgetManager) widgetManager = FindObjectOfType<GI_WidgetManager>();

@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 5663611723246624689}
   - component: {fileID: 5562213470515438678}
   - component: {fileID: 1384459178968480311}
+  - component: {fileID: 7051835688012922218}
+  - component: {fileID: 5363501137258119802}
   m_Layer: 0
   m_Name: GameInstance
   m_TagString: Untagged
@@ -1048,3 +1050,50 @@ MonoBehaviour:
     audioFile: {fileID: 0}
   - identifier: 11
     audioFile: {fileID: 0}
+  musicManager: {fileID: 0}
+--- !u!114 &7051835688012922218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298151654670827244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e1c9fa8e9ac21418eb4c55c580626d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveDataStrategy:
+    rid: 5066348709454544898
+  doSaving: 1
+  gameSaveName: HyLi
+  saveSlot: 0
+  defaultWorld: Desktop
+  references:
+    version: 2
+    RefIds:
+    - rid: 5066348709454544898
+      type: {class: PlayerPrefsSaveDataStrategy, ns: , asm: Assembly-CSharp}
+      data:
+        currentSaveData:
+          keys: []
+          values: []
+--- !u!114 &5363501137258119802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298151654670827244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ddf4542fcd654941beba7ec55ab93e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveData:
+    playtime: 0
+    health: 100
+    cache: 0
+    deaths: 0
+    damageTaken: 0
+    damageDealt: 0

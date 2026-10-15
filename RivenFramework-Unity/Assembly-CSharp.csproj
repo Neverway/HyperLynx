@@ -45,7 +45,9 @@
     <Analyzer Include="/home/lizband/Unity/Hub/Editor/2022.3.15f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets/Resources/Scripts/WB_Title.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Tools/Utilities/DrawUtility.cs" />
+     <Compile Include="Assets/Resources/Scripts/AuHoSaveSystem/SerializableDictionary.cs" />
      <Compile Include="Assets/Resources/Other/IntegratableSystems/EditorTools/CSGForceRebuildOnUndo.cs" />
      <Compile Include="Assets/Resources/Objects/ZONES/MusicTracks.cs" />
      <Compile Include="Assets/Resources/Other/IntegratableSystems/NyNetBridge/NetConnect1.0/WB_NetPlayerlist.cs" />
@@ -77,6 +79,7 @@
      <Compile Include="Assets/Resources/Scripts/DepthController.cs" />
      <Compile Include="Assets/_REMOVE_/Integratables/CorGeo/Actor_StepUp.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Extensions/Matrices/Matrix3x2.cs" />
+     <Compile Include="Assets/Resources/Scripts/GI_HyLiGameState.cs" />
      <Compile Include="Assets/Resources/Widgets/WB_HUD.cs" />
      <Compile Include="Assets/_REMOVE_/Integratables/_Depreciated/UI_Image_EntityPortrait.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/UpdateUtility.cs" />
@@ -97,6 +100,7 @@
      <Compile Include="Assets/Resources/Other/IntegratableSystems/ErryLib/ReflectionUtils/ReflectionUtils.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Importers/Quake1/MapVector2.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Core/IDeepCopyable.cs" />
+     <Compile Include="Assets/Resources/Scripts/AuHoSaveSystem/PlayerPrefsSaveDataStrategy.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Importers/ValveMapFormat2006/VmfPlane.cs" />
      <Compile Include="Assets/_REMOVE_/Integratables/_Depreciated/Particle_DataExposer.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Brushes/CompoundBrushes/ShapeEditor/Bezier.cs" />
@@ -130,6 +134,7 @@
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/UI/CSGGrid.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Tools/Utilities/ClipUtility.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Core/BuildEngine/CSGFactory.cs" />
+     <Compile Include="Assets/Resources/Scripts/AuHoSaveSystem/GI_SaveSystem.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Core/CSG/Polygon.cs" />
      <Compile Include="Assets/_REMOVE_/Integratables/CorGeo/SplashScreenPlayer.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/IPostBuildListener.cs" />
@@ -199,6 +204,7 @@
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Brushes/Volumes/AudioVolume/VolumetricAudioVolumeComponent.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/UI/SabreCSGPreferences.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Geometry/GeometryHelper.cs" />
+     <Compile Include="Assets/Resources/Scripts/AuHoSaveSystem/JsonBasedSaveDataStrategy.cs" />
      <Compile Include="Assets/Resources/Other/IntegratableSystems/NyNetBridge/NetConnect1.0/GI_NetworkManager.cs" />
      <Compile Include="Assets/Resources/Other/IntegratableSystems/TextboxSystem/GI_TextboxManager.cs" />
      <Compile Include="Assets/Resources/Other/IntegratableSystems/ErryLib/ModifierSystem/ModifierSystem/ModifiableValue.cs" />
@@ -228,6 +234,7 @@
      <Compile Include="Assets/Resources/Other/IntegratableSystems/ErryLib/ModifierSystem/ModifierSystem/GameEventSystem.cs" />
      <Compile Include="Assets/_REMOVE_/Integratables/_Depreciated/Volume2D_Force.cs" />
      <Compile Include="Assets/Resources/Other/IntegratableSystems/Assorted/Logic_Door.cs" />
+     <Compile Include="Assets/Resources/Scripts/AuHoSaveSystem/StringDataUtility.cs" />
      <Compile Include="Assets/Packages/DOTween/Modules/DOTweenModuleEPOOutline.cs" />
      <Compile Include="Assets/Resources/Other/IntegratableSystems/NyNetBridge/NetConnect1.0/NetChat.cs" />
      <Compile Include="Assets/Resources/Other/IntegratableSystems/ErryLib/ReflectionUtils/IAttributeLoader.cs" />
@@ -277,6 +284,7 @@
      <Compile Include="Assets/Resources/Other/IntegratableSystems/NyNetBridge/NetConnect1.0/WB_NetConnect.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/CSGModel.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Core/BuildEngine/BrushBuilder.cs" />
+     <Compile Include="Assets/Resources/Scripts/AuHoSaveSystem/SaveDataStrategy.cs" />
      <Compile Include="Assets/Packages/DOTween/Modules/DOTweenModuleAudio.cs" />
      <Compile Include="Assets/Resources/Other/IntegratableSystems/ErryLib/CoreAttributes/ReloadAttribute.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/UI/Toolbar.cs" />
@@ -390,6 +398,7 @@
      <Folder Include="Assets/RivenFramework-Revamp/_Resources_/Sprites/Widgets/Materials" />
      <None Include="Assets/Resources/Materials/Shaders/SX_SlicePreview.shader" />
      <None Include="Assets/Resources/Materials/Shaders/PostProcessing/ComicFilter.shader" />
+     <Folder Include="Assets/Resources/Scripts/AuHoSaveSystem" />
      <Folder Include="Assets/Packages/Xelu_Prompts" />
      <None Include="Assets/Resources/Other/IntegratableSystems/PixelSpriteUtils/PixelatorShader/SpriteLit.shader" />
      <Folder Include="Assets/Resources/Other/IntegratableSystems/RuntimeDevTools" />

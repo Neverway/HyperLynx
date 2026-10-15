@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 79108727664135453}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.11}
   m_LocalScale: {x: 0.6, y: 0.1888889, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453d4cb784d2ebc6b8aa89d5800b1c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicToPlayOnZoneLoaded: 0
   depthCount: 25
   backgroundDrawDepth: 6
   drawLayerOverlappingBackground: 1
