@@ -224,9 +224,9 @@ MonoBehaviour:
       textureQuality: 4
       postprocessingQuality: 2
     antialiasing: 0
-    motionBlur: 0
+    motionBlur: 1
     ambientOcclusion: 2
-    bloom: 2
+    bloom: 3
     outputDevice: 0
     inputDevice: 0
     inputVolume: 100
@@ -304,9 +304,9 @@ MonoBehaviour:
       textureQuality: 4
       postprocessingQuality: 2
     antialiasing: 0
-    motionBlur: 0
+    motionBlur: 1
     ambientOcclusion: 2
-    bloom: 2
+    bloom: 3
     outputDevice: 0
     inputDevice: 0
     inputVolume: 100
@@ -394,7 +394,7 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 549b84953554a157688e4ed0cb77d9a7, type: 2}
   cameraPrefab: {fileID: 8932372165829005355, guid: 273f560cf23f789b987aeac1af365c4d,
     type: 3}
-  postProcessProfile: {fileID: 11400000, guid: a955f9f7ab1cde5dea83bd6ace99621d, type: 2}
+  postProcessProfile: {fileID: 11400000, guid: 948fb0b407ab8f7fab94a5aaf2d2e9c9, type: 2}
   framecounterWidget: {fileID: 1985048443619682036, guid: d7a6a9f14009a7035a7398092fcf75cd,
     type: 3}
 --- !u!114 &6747932280233385115
