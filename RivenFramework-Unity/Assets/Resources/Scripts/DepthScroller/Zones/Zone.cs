@@ -354,7 +354,6 @@ public class Zone : MonoBehaviour
         int lowDepth = Mathf.FloorToInt(visualDepth);
         int highDepth = Mathf.CeilToInt(visualDepth);
         int lastVisibleLayerIndex = highDepth + (drawLayerOverlappingBackground ? backgroundDrawDepth : backgroundDrawDepth - 1);
-        int gradientSpan = backgroundDrawDepth - 1;
 
         for (int i = 0; i < count; i++)
         {
@@ -391,24 +390,7 @@ public class Zone : MonoBehaviour
             // Tint
             if (visible && tintSprites)
             {
-                Color layerTint;
-                Color spriteTint;
-
-                if (relativeDepth >= 0f)
-                {
-                    float t = gradientSpan <= 0 ? (relativeDepth > 0f ? 1f : 0f) : Mathf.Clamp01(relativeDepth / gradientSpan);
-                    layerTint = layerDepthTint.Evaluate(t);
-                    spriteTint = spriteDepthTint.Evaluate(t);
-                }
-                else
-                {
-                    float distanceBehind = -relativeDepth;
-                    float t = gradientSpan <= 0 ? 1f : Mathf.Clamp01(distanceBehind / gradientSpan);
-
-                    float blend = Mathf.Clamp01(distanceBehind);
-                    layerTint = Color.Lerp(layerDepthTint.Evaluate(0f), behindLayerDepthTint.Evaluate(t), blend);
-                    spriteTint = Color.Lerp(spriteDepthTint.Evaluate(0f), behindSpriteDepthTint.Evaluate(t), blend);
-                }
+                GetTints(relativeDepth, out Color layerTint, out Color spriteTint);
 
                 foreach (SpriteRenderer renderer in layer.GetComponentsInChildren<SpriteRenderer>(true))
                 {
@@ -465,6 +447,43 @@ public class Zone : MonoBehaviour
             });
 
         return true;
+    }
+
+    public void GetTints(float _relativeDepth, out Color _layerTint, out Color _spriteTint)
+    {
+        int gradientSpan = backgroundDrawDepth - 1;
+        
+        if (_relativeDepth >= 0f)
+        {
+            float t = gradientSpan <= 0 ? (_relativeDepth > 0f ? 1f : 0f) : Mathf.Clamp01(_relativeDepth / gradientSpan);
+            _layerTint = layerDepthTint.Evaluate(t);
+            _spriteTint = spriteDepthTint.Evaluate(t);
+        }
+        else
+        {
+            float distanceBehind = -_relativeDepth;
+            float t = gradientSpan <= 0 ? 1f : Mathf.Clamp01(distanceBehind / gradientSpan);
+            float blend = Mathf.Clamp01(distanceBehind);
+            _layerTint = Color.Lerp(layerDepthTint.Evaluate(0f), behindLayerDepthTint.Evaluate(t), blend);
+            _spriteTint = Color.Lerp(spriteDepthTint.Evaluate(0f), behindSpriteDepthTint.Evaluate(t), blend);
+        }
+    }
+    
+    public Color GetSpriteTint(int layerIndex)
+    {
+        if (!tintSprites) return Color.white;
+        GetTints(layerIndex - visualDepth, out _, out var spriteTint);
+        return spriteTint;
+    }
+    
+    public void TintNewObject(Transform root, int layerIndex)
+    {
+        if (!tintSprites) return;
+        GetTints(layerIndex - visualDepth, out _, out Color spriteTint);
+        foreach (var renderer in root.GetComponentsInChildren<SpriteRenderer>(true))
+        {
+            renderer.color = spriteTint;
+        }
     }
 
     #endregion

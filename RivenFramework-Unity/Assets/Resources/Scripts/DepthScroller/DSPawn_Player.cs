@@ -31,9 +31,10 @@ public class DSPawn_Player : DSPawn
     /*----------------------------------------------------------------------------------------------------------------*/
     private Vector3 moveDirection;
     private Vector2 lookRotation;
+    [HideInInspector] public float facing = 1f;
+    public DSPawnActions CombatActions => action;
     
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private float flashDuration = 0.1f;
 
     private Tween flashTween;
     
@@ -50,11 +51,6 @@ public class DSPawn_Player : DSPawn
 
     public Zone zone;
     private ZoneManager zonemanager;
-    public GameObject characterVisuals;
-    public ParticleSystem hurtParticleEmitter;
-
-    private List<SpriteRenderer> spritesRenderers;
-    private Dictionary<SpriteRenderer, Color> originalColors = new Dictionary<SpriteRenderer, Color>();
     
     #endregion
 
@@ -108,8 +104,6 @@ public class DSPawn_Player : DSPawn
         // Enable the view camera
         //action.EnableViewCamera(this, true);
 
-        spritesRenderers = GetComponentsInChildren<SpriteRenderer>(true).ToList();
-        foreach (var r in spritesRenderers) originalColors[r] = r.color;
         
         StartCoroutine(DoLevelSubCrap());
     }
@@ -342,6 +336,7 @@ public class DSPawn_Player : DSPawn
         var mouseDeadzonePixels = 10f;
         //float side = Mathf.Clamp(delta / (Screen.width * 0.25f), -1f, 1f);
         float side = Mathf.Abs(delta) < mouseDeadzonePixels ? 0f : Mathf.Sign(delta);
+        if (side != 0f) facing = side;
         
         animator.SetFloat("MouseX", side);
         animator.SetFloat("IdleX", side);

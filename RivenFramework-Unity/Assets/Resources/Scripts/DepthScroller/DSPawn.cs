@@ -7,6 +7,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
     
 public class DSPawn : Pawn
@@ -23,6 +24,12 @@ public class DSPawn : Pawn
     //=-----------------=
     // Private Variables
     //=-----------------=
+    public GameObject characterVisuals;
+    public ParticleSystem hurtParticleEmitter;
+
+    public List<SpriteRenderer> spritesRenderers;
+    public Dictionary<SpriteRenderer, Color> originalColors = new Dictionary<SpriteRenderer, Color>();
+    public float flashDuration = 0.1f;
 
 
     //=-----------------=
@@ -51,6 +58,9 @@ public class DSPawn : Pawn
         defaultStats = DSDefaultStats;
         currentStats = (DSPawnStats)DSDefaultStats.Clone(); // Don't forget to clone so that you don't overwrite the pawns default values! ~Liz
         action = DSaction;
+        
+        spritesRenderers = GetComponentsInChildren<SpriteRenderer>(true).ToList();
+        foreach (var r in spritesRenderers) originalColors[r] = r.color;
     }
     
 

@@ -4981,6 +4981,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -9183994665508445123}
+    - targetCorrespondingSourceObject: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5058324293355595459}
   m_SourcePrefab: {fileID: 100100000, guid: 9b090a8f1bc24837eaf4e567de14e00d, type: 3}
 --- !u!1 &7447890804896595824 stripped
 GameObject:
@@ -5014,6 +5018,10 @@ MonoBehaviour:
   visibleHostiles: []
   visibleAllies: []
   WantsToDrop: 0
+  characterVisuals: {fileID: 1708426828679364701}
+  hurtParticleEmitter: {fileID: 2771781979975038480}
+  spritesRenderers: []
+  flashDuration: 0.1
   DSDefaultStats:
     health: 100
     invulnerabilityTime: 0.5
@@ -5049,14 +5057,63 @@ MonoBehaviour:
   physicsbody: {fileID: 0}
   interactionPrefab: {fileID: 0}
   animator: {fileID: 5340830857586524317}
+  facing: 1
   spriteRenderer: {fileID: 0}
-  flashDuration: 0.1
+  action:
+    isCrouching: 0
+    isJumping: 0
+    jumpHeld: 0
+    isFastFalling: 0
+    isKicking: 0
+    isChargingSuperKick: 0
+    superKickReady: 0
+    superKickMinCharge: 1
+    superKickMaxCharge: 3
   DeathScreenWidget: {fileID: 7983860617751392307, guid: 62836cd323ab652babd6fb03fe6e137a,
     type: 3}
   playerInventory: {fileID: 0}
+  viewCamera: {fileID: 0}
   zone: {fileID: 0}
-  characterVisuals: {fileID: 1708426828679364701}
-  hurtParticleEmitter: {fileID: 2771781979975038480}
+--- !u!114 &5058324293355595459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447890804896595824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379dbfa1aa5a8d1eaa770c72df531392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kick:
+    boxSize: {x: 1.2, y: 1}
+    boxOffset: {x: 0.9, y: 0.9}
+    hitDelay: 0.08
+    hitDuration: 0.12
+    damageMin: 10
+    damageMax: 10
+    knockbackMin: 1.5
+    knockbackMax: 1.5
+    knockbackUp: 0.25
+    recoilMin: 0
+    recoilMax: 0
+  superKick:
+    boxSize: {x: 1.8, y: 1.4}
+    boxOffset: {x: 1.1, y: 0.9}
+    hitDelay: 0.05
+    hitDuration: 0.15
+    damageMin: 20
+    damageMax: 60
+    knockbackMin: 3
+    knockbackMax: 9
+    knockbackUp: 0.5
+    recoilMin: 6
+    recoilMax: 14
+  stompDamage: 25
+  stompBounceVelocity: 14
+  feetHalfWidth: 0.3
+  stompTolerance: 0.15
 --- !u!4 &8985679000693322751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,

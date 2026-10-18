@@ -38,6 +38,14 @@ public class DSPawnActions : PawnActions
     [SerializeField] private bool superKickReady;
     private Coroutine superKickCo;
     private Coroutine kickCo;
+    public event Action OnKick;
+    public event Action<float> OnSuperKick;
+    
+    [Tooltip("How long the super kick must be charged before it can be released")]
+    [SerializeField] private float superKickMinCharge = 1f;
+    [Tooltip("How long the super kick takes to reach full power")]
+    [SerializeField] private float superKickMaxCharge = 3f;
+    private float superKickStartTime;
 
 
     //=-----------------=
@@ -292,6 +300,7 @@ public class DSPawnActions : PawnActions
     {
         if (isKicking || isChargingSuperKick) return;
         kickCo = GameInstance.SendCoroutine(KickCooldown(_pawn));
+        OnKick?.Invoke();
     }
 
     public IEnumerator KickCooldown(DSPawn _pawn)
@@ -307,6 +316,7 @@ public class DSPawnActions : PawnActions
         isChargingSuperKick = true;
         isKicking = true;
         superKickReady = false;
+        superKickStartTime = Time.time;
         _pawn.animator.Play("SuperKickCharge");
         _pawn.animator.SetBool("ChargingSuperKick", isChargingSuperKick);
         superKickCo = GameInstance.SendCoroutine(SuperKickCharge(_pawn));
@@ -319,6 +329,9 @@ public class DSPawnActions : PawnActions
 
         if (superKickReady)
         {
+            float held = Time.time - superKickStartTime;
+            float power = Mathf.InverseLerp(superKickMinCharge, superKickMaxCharge, held);
+            OnSuperKick?.Invoke(power);
             kickCo = GameInstance.SendCoroutine(SuperKickCooldown(_pawn));
             superKickReady = false;
         }
@@ -337,7 +350,7 @@ public class DSPawnActions : PawnActions
 
     public IEnumerator SuperKickCharge(DSPawn _pawn)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(superKickMinCharge);
         superKickReady = true;
     }
 
@@ -398,6 +411,16 @@ public class DSPawnActions : PawnActions
         var stats = (DSPawnStats)_pawn.currentStats;
         float y = Mathf.MoveTowards(rigidbody.velocity.y, -stats.fastFallSpeed, stats.fastFallAcceleration * Time.fixedDeltaTime);
         rigidbody.velocity = new Vector3(rigidbody.velocity.x, y, rigidbody.velocity.z);
+    }
+    
+    public void Bounce(DSPawn _pawn, float _velocity)
+    {
+        var rigidbody = _pawn.GetComponent<Rigidbody>();
+        rigidbody.velocity = new Vector3(rigidbody.velocity.x, _velocity, rigidbody.velocity.z);
+        isFastFalling = false;
+        isJumping = false;
+        lastGroundedTime = float.NegativeInfinity;
+        lastJumpTime = Time.time;
     }
 
     /// <summary>
