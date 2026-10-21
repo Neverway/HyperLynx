@@ -55,7 +55,7 @@ public class Attack_RingBurst : EnemyAttack
         {
             float extraAngle = rotatePerBurst * burst;
             if (staggerAlternateRings && burst % 2 == 1) extraAngle += halfStep;
-            
+            yield return new WaitUntil(() => !_enemy.IsStunned);
             GameInstance.Get<BulletManager>().Fire(pattern, _enemy.depth, _enemy.LocalPosition, extraAngle);
             burst++;
 

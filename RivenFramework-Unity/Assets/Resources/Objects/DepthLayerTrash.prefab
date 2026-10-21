@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7930991472461407384}
   - component: {fileID: 6126089634654902323}
   m_Layer: 0
-  m_Name: DepthLayer
+  m_Name: DepthLayerTrash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -255
-  m_Sprite: {fileID: 21300000, guid: 63f131edd3db30882b857652ad7f017b, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 75d89b59962cb5f9e902eb03a84b83cd, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.13333334}
   m_FlipX: 0
   m_FlipY: 0

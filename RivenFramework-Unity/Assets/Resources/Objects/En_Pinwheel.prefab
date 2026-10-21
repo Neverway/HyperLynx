@@ -4962,7 +4962,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 36f93abfca47578298abd03432d30510, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66bcc02f5093e5162b69f7e690490763, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5129,7 +5129,7 @@ PrefabInstance:
     - target: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
         type: 3}
       propertyPath: m_Name
-      value: Spray
+      value: En_Pinwheel
       objectReference: {fileID: 0}
     - target: {fileID: 2718573228792905327, guid: 9b090a8f1bc24837eaf4e567de14e00d,
         type: 3}
@@ -5471,7 +5471,8 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2468578036518729287, guid: 9b090a8f1bc24837eaf4e567de14e00d, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3530290976552340750, guid: 9b090a8f1bc24837eaf4e567de14e00d, type: 3}
     m_AddedGameObjects:
@@ -5495,15 +5496,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4559892226829204790}
+      addedObject: {fileID: -6087743709287553331}
     - targetCorrespondingSourceObject: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5251401813108158195}
+      addedObject: {fileID: -1864925998667381475}
   m_SourcePrefab: {fileID: 100100000, guid: 9b090a8f1bc24837eaf4e567de14e00d, type: 3}
 --- !u!4 &2675927773362579568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2117187346302663548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &3005099805941211015 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3807090856694572283, guid: 9b090a8f1bc24837eaf4e567de14e00d,
     type: 3}
   m_PrefabInstance: {fileID: 2117187346302663548}
   m_PrefabAsset: {fileID: 0}
@@ -5579,12 +5586,17 @@ MonoBehaviour:
   interactionPrefab: {fileID: 0}
   animator: {fileID: 0}
   depth: 0
-  movement: {fileID: 0}
-  attack: {fileID: 5251401813108158195}
+  movement: {fileID: -6087743709287553331}
+  attack: {fileID: -1864925998667381475}
   maxLifetime: 0
   knockReturnDelay: 0.15
   knockReturnTime: 0.5
   maxKnockDistance: 4
+  hitstunDuration: 0.2
+  shakeStrength: 0.1
+  hitFlashColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  hurt: {fileID: 8300000, guid: debe5c5c02d63ca2d8b43af74a36c80a, type: 3}
+  audioSource: {fileID: 3005099805941211015}
 --- !u!114 &-7083268888780541023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5606,7 +5618,9 @@ MonoBehaviour:
   squishHoldTime: 0.05
   squishRecoverTime: 0.4
   stompCooldown: 0.3
---- !u!114 &4559892226829204790
+  ignoreDamage: 0
+  allowKnockback: 1
+--- !u!114 &-6087743709287553331
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5615,16 +5629,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4525409992167236863}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca676350f68796ebabedf48377efab3d, type: 3}
+  m_Script: {fileID: 11500000, guid: ec315c8f5b2bf9059bf229895196152e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
-  angularSpeed: 90
-  startAngle: 0
-  clockwise: 0
-  radiusGrowth: 0
-  drift: {x: 0, y: 0}
---- !u!114 &5251401813108158195
+  fallSpeed: 0.1
+  amplitude: 3
+  frequency: 1
+--- !u!114 &-1864925998667381475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5633,11 +5644,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4525409992167236863}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53caf06a6625f95dcb38c26dc4874d6d, type: 3}
+  m_Script: {fileID: 11500000, guid: aa5e621f080fbc5888bd7268711ae98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern: {fileID: 11400000, guid: 4a1870b672d5abadaa389fcfa736c8fc, type: 2}
-  initialDelay: 1.5
-  sprayDuration: 3
-  fireInterval: 0.06
-  restTime: 1.5
+  pattern: {fileID: 11400000, guid: b3af847d2a9b53f2da1634d2fdd12bf1, type: 2}
+  shots: 32
+  interval: 0.1
+  twistPerShot: 6
+  restTime: 4

@@ -50,6 +50,7 @@ public class Attack_Spiral : EnemyAttack
         {
             for (int i = 0; i < shots; i++)
             {
+                yield return new WaitUntil(() => !_enemy.IsStunned);
                 GameInstance.Get<BulletManager>().Fire(pattern, _enemy.depth, _enemy.LocalPosition, twistPerShot * i);
                 yield return new WaitForSeconds(interval);
             }

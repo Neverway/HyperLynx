@@ -5129,7 +5129,7 @@ PrefabInstance:
     - target: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
         type: 3}
       propertyPath: m_Name
-      value: PlaceHolderEnemy 2
+      value: En_Target
       objectReference: {fileID: 0}
     - target: {fileID: 2718573228792905327, guid: 9b090a8f1bc24837eaf4e567de14e00d,
         type: 3}
@@ -5496,15 +5496,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4143653983580431410}
+      addedObject: {fileID: 1829597172700660695}
     - targetCorrespondingSourceObject: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1829597172700660695}
+      addedObject: {fileID: 7088009388560126799}
   m_SourcePrefab: {fileID: 100100000, guid: 9b090a8f1bc24837eaf4e567de14e00d, type: 3}
 --- !u!4 &2675927773362579568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2117187346302663548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &3005099805941211015 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3807090856694572283, guid: 9b090a8f1bc24837eaf4e567de14e00d,
     type: 3}
   m_PrefabInstance: {fileID: 2117187346302663548}
   m_PrefabAsset: {fileID: 0}
@@ -5580,12 +5586,17 @@ MonoBehaviour:
   interactionPrefab: {fileID: 0}
   animator: {fileID: 0}
   depth: 0
-  movement: {fileID: 4143653983580431410}
+  movement: {fileID: 7088009388560126799}
   attack: {fileID: 1829597172700660695}
-  maxLifetime: 0
+  maxLifetime: 4.5
   knockReturnDelay: 0.15
   knockReturnTime: 0.5
   maxKnockDistance: 4
+  hitstunDuration: 0.2
+  shakeStrength: 0.1
+  hitFlashColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  hurt: {fileID: 8300000, guid: debe5c5c02d63ca2d8b43af74a36c80a, type: 3}
+  audioSource: {fileID: 3005099805941211015}
 --- !u!114 &-7083268888780541023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5607,24 +5618,8 @@ MonoBehaviour:
   squishHoldTime: 0.05
   squishRecoverTime: 0.4
   stompCooldown: 0.3
---- !u!114 &4143653983580431410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4525409992167236863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57ceca3156a537fb9a659c3c1d41dc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoverOffset: {x: 0, y: -4}
-  enterTime: 1.5
-  hoverTime: 5
-  exitDirection: {x: 0, y: 5}
-  exitSpeed: 2
-  exitAcceleration: 8
+  ignoreDamage: 0
+  allowKnockback: 1
 --- !u!114 &1829597172700660695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5641,4 +5636,19 @@ MonoBehaviour:
   initialDelay: 1.5
   shotsPerBurst: 3
   shotInterval: 0.15
-  burstInterval: 2
+  burstInterval: 4
+--- !u!114 &7088009388560126799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525409992167236863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e594e652f53b92278a563030aa1bd5ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: -1}
+  speed: 2
+  acceleration: 0

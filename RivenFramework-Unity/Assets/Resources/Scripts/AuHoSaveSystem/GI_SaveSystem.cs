@@ -231,7 +231,9 @@ public class GI_SaveSystem : MonoBehaviour
     [ContextMenu("Trigger Load Game")]
     private void OnLoadGame()
     {
+        Debug.Log("Load");
         if (!Application.isPlaying || !doSaving) return;
+        Debug.Log("Load 1");
 
         if (!HasSave())
         {
@@ -246,6 +248,7 @@ public class GI_SaveSystem : MonoBehaviour
 
         CurrentSavingType = SavingType.SavingOrLoadingFile;
         {
+            Debug.Log("Load 2");
             //Load all values from PlayerPrefs
             saveDataStrategy.Load(SaveDataFileName);
 

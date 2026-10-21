@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1776c69eebc93e72bbab7efbdf4223bd, type: 3}
-  m_Name: 3
+  m_Name: 8
   m_EditorClassIdentifier: 
-  count: 3
+  count: 8
   arc: 360
   angleOffset: 0
-  aimAtPlayer: 1
-  speed: 5
+  aimAtPlayer: 0
+  speed: 6
   acceleration: 0
   turnRate: 25
   lifetime: 6

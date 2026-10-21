@@ -1112,8 +1112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6718455548643469640}
-  playerHitRadius: 0.24
-  playerHitOffset: {x: 0, y: 0.9}
+  playerHitRadius: 0.15
+  playerHitOffset: {x: 0, y: 1}
   invulnerabilityTime: 0.75
 --- !u!1001 &3624048239787505392
 PrefabInstance:

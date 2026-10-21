@@ -57,6 +57,7 @@ public class Attack_SprayAndPray : EnemyAttack
             float endTime = Time.time + sprayDuration;
             while (Time.time < endTime)
             {
+                yield return new WaitUntil(() => !_enemy.IsStunned);
                 GameInstance.Get<BulletManager>().Fire(pattern, _enemy.depth, _enemy.LocalPosition);
                 yield return fireWait;
             }

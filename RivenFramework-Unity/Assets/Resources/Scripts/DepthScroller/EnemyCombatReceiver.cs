@@ -31,6 +31,10 @@ public class EnemyCombatReceiver : MonoBehaviour
 
     [Header("Stomp")]
     public float stompCooldown = 0.3f;
+    
+    [Header("General")]
+    public bool ignoreDamage;
+    public bool allowKnockback = true;
 
     /*-----[ External Variables ]-------------------------------------------------------------------------------------*/
     public static readonly List<EnemyCombatReceiver> Active = new List<EnemyCombatReceiver>();
@@ -50,6 +54,7 @@ public class EnemyCombatReceiver : MonoBehaviour
     public Rect Bounds => new Rect(Center - hitboxSize * 0.5f, hitboxSize);
     public float Top => Center.y + hitboxSize.y * 0.5f;
     public bool CanBeStomped => Time.time >= stompableAt;
+    public event System.Action OnHit;
 
     #endregion
 
@@ -92,15 +97,19 @@ public class EnemyCombatReceiver : MonoBehaviour
     /*-----[ External Functions ]-------------------------------------------------------------------------------------*/
     public void TakeKick(float _damage, Vector2 _knockback)
     {
-        Enemy.ModifyHealth(-_damage);
-        Knock(_knockback, 0.2f);
+        if (!ignoreDamage) Enemy.ModifyHealth(-_damage);
+        Enemy.PlayHitFeedback();
+        if (allowKnockback) Knock(_knockback, 0.2f);
+        OnHit?.Invoke();
     }
 
     public void TakeStomp(float _damage)
     {
         stompableAt = Time.time + stompCooldown;
-        Enemy.ModifyHealth(-_damage);
+        if (!ignoreDamage) Enemy.ModifyHealth(-_damage);
+        Enemy.PlayHitFeedback();
         Squish();
+        OnHit?.Invoke();
     }
 
     public void Knock(Vector2 _delta, float _duration)

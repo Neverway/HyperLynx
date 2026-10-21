@@ -15,6 +15,7 @@ using DG.Tweening;
 using RivenFramework;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class DSPawn_Player : DSPawn
 {
@@ -46,6 +47,10 @@ public class DSPawn_Player : DSPawn
     [SerializeField] private GameObject DeathScreenWidget;
     [SerializeField] private Pawn_Inventory playerInventory;
     private ApplicationSettings applicationSettings;
+    public AudioClip hurt, jump, land, landHard;
+    public AudioSource audioSource;
+    public float landMinAirTime = 0.12f;
+    private float airTime;
 
     public Camera viewCamera;
 
@@ -158,16 +163,24 @@ public class DSPawn_Player : DSPawn
 
         // Jumping
         action.jumpHeld = inputActions.JumpAndKick.IsPressed();
-        if (inputActions.JumpAndKick.WasPressedThisFrame()) action.Jump(this);
+        if (inputActions.JumpAndKick.WasPressedThisFrame())
+        {
+            bool willJump = action.CanJump(this);
+            action.Jump(this);
+            if (willJump) PlaySound(jump);
+        }
     }
 
     public void FixedUpdate()
     {
         if (HasControl is false) return;
         
+        bool wasFastFalling = action.isFastFalling;
+
         action.UpdateCoyoteTime(this);
         action.ApplyJumpGravity(this);
         action.ApplyFastFall(this, inputActions.Fall.IsPressed());
+        UpdateLandingSound(wasFastFalling);
         
         ApplyMovement();
         ApplyRotation();
@@ -234,6 +247,7 @@ public class DSPawn_Player : DSPawn
 
     private void OnHurt(DamageInfo info = default)
     {
+        PlaySound(hurt);
         characterVisuals.transform.DOShakePosition(0.125f, new Vector3(0.05f, 0, 0));
         hurtParticleEmitter.Play();
 
@@ -281,6 +295,7 @@ public class DSPawn_Player : DSPawn
     private void OnDeath(DamageInfo _damageInfo)
     {
         // Remove the HUD
+        PlaySound(hurt);
         //Destroy(widgetManager.GetExistingWidget("WB_HUD"));
         // Add the respawn HUD
         widgetManager.AddWidget(DeathScreenWidget);
@@ -342,6 +357,25 @@ public class DSPawn_Player : DSPawn
         animator.SetFloat("IdleX", side);
     }
 
+    private void UpdateLandingSound(bool _wasFastFalling)
+    {
+        if (!action.IsOnGround(this))
+        {
+            airTime += Time.fixedDeltaTime;
+            return;
+        }
+
+        if (airTime >= landMinAirTime) 
+            PlaySound(_wasFastFalling ? landHard : land);
+        airTime = 0f;
+    }
+    
+    private void PlaySound(AudioClip _clip)
+    {
+        audioSource.pitch = Random.Range(0.95f, 1.05f);
+        if (_clip && audioSource) audioSource.PlayOneShot(_clip);
+    }
+    
     /*-----[ External Functions ]-------------------------------------------------------------------------------------*/
     /*----------------------------------------------------------------------------------------------------------------*/
 

@@ -24,6 +24,12 @@ public class DSPawn_Enemy : DSPawn
     public float knockReturnDelay = 0.15f;
     public float knockReturnTime = 0.5f;
     public float maxKnockDistance = 4f;
+    [Header("Hitstun")]
+    public float hitstunDuration = 0.2f;
+    public float shakeStrength = 0.1f;
+    public Color hitFlashColor = Color.yellow;
+    public AudioClip hurt;
+    public AudioSource audioSource;
 
     /*-----[ External Variables ]-------------------------------------------------------------------------------------*/
 
@@ -34,7 +40,13 @@ public class DSPawn_Enemy : DSPawn
     Vector2 knockOffset;
     Vector2 knockVelocity;
     float knockReturnAt;
+    float stunnedUntil;
+    int lastFeedbackFrame = -1;
+    Transform shakeTarget;
+    Vector3 shakeTargetBase;
+    bool shaking;
 
+    public bool IsStunned => Time.time < stunnedUntil;
 
 
     /*-----[ Reference Variables ]------------------------------------------------------------------------------------*/
@@ -51,14 +63,28 @@ public class DSPawn_Enemy : DSPawn
     public new void Awake()
     {
         base.Awake();
+        shakeTarget = characterVisuals ? characterVisuals.transform : transform;
+        if (shakeTarget != transform) shakeTargetBase = shakeTarget.localPosition;
         physicsbody.isKinematic = true;
         OnPawnDeath += OnDeath;
         OnPawnHurt += OnHurt;
+        
+        var zone = GetComponentInParent<Zone>();
+        if (zone)
+        {
+            for (Transform t = transform; t != null; t = t.parent)
+            {
+                int index = zone.depthLayers.IndexOf(t.gameObject);
+                if (index >= 0) { depth = index; break; }
+            }
+            spawnLocal = transform.localPosition;
+            if (attack) StartCoroutine(attack.Run(this));
+        }
     }
 
     void Update()
     {
-        age += Time.deltaTime;
+        if (!IsStunned) age += Time.deltaTime;
 
         if (knockOffset != Vector2.zero && Time.time >= knockReturnAt)
         {
@@ -67,48 +93,76 @@ public class DSPawn_Enemy : DSPawn
         }
 
         Vector2 pathOffset = movement ? movement.Offset(age) : Vector2.zero;
-        transform.localPosition = spawnLocal + pathOffset + knockOffset;
+        Vector3 position = spawnLocal + pathOffset + knockOffset;
+
+        Vector3 shake = Vector3.zero;
+        if (IsStunned && hitstunDuration > 0f)
+        {
+            float strength = (stunnedUntil - Time.time) / hitstunDuration;
+            shake = Random.insideUnitCircle * (shakeStrength * strength);
+        }
+
+        if (shakeTarget == transform)
+        {
+            transform.localPosition = position + shake;
+        }
+        else
+        {
+            transform.localPosition = position;
+
+            if (shake != Vector3.zero || shaking)
+            {
+                shakeTarget.localPosition = shakeTargetBase + shake;
+                shaking = shake != Vector3.zero;
+            }
+        }
 
         if (maxLifetime > 0f && age > maxLifetime) Despawn();
     }
     
     /*-----[ Internal Functions ]-------------------------------------------------------------------------------------*/
-    void OnDeath(DamageInfo info)
-    {
-        characterVisuals.transform.DOShakePosition(0.125f, new Vector3(0.05f, 0, 0));
-        hurtParticleEmitter.Play();
-
-        foreach (var renderer in spritesRenderers)
-        {
-            Flash(renderer);
-        }
-        Despawn();
-    }
 
     void Despawn() => Destroy(gameObject, 0.15f);
     
+    void OnDeath(DamageInfo info)
+    {
+        PlayHitFeedback();
+        Despawn();
+    }
+
     private void OnHurt(DamageInfo info = default)
     {
-        characterVisuals.transform.DOShakePosition(0.125f, new Vector3(0.05f, 0, 0));
-        hurtParticleEmitter.Play();
+        PlayHitFeedback();
+    }
+
+    public void PlayHitFeedback()
+    {
+        PlaySound(hurt);
+        if (lastFeedbackFrame == Time.frameCount) return;
+        lastFeedbackFrame = Time.frameCount;
+
+        stunnedUntil = Time.time + hitstunDuration;
+        if (hurtParticleEmitter) hurtParticleEmitter.Play();
 
         foreach (var renderer in spritesRenderers)
         {
             Flash(renderer);
         }
     }
-    
-    
+
     public void Flash(SpriteRenderer targetRenderer)
     {
-        targetRenderer.DOKill();
+        targetRenderer.DOKill(true);
 
-        Color original = originalColors[targetRenderer];
-        targetRenderer.color = original;
-
-        targetRenderer.DOColor(Color.yellow, flashDuration)
+        targetRenderer.DOColor(hitFlashColor, flashDuration)
             .SetLoops(2, LoopType.Yoyo)
             .SetLink(targetRenderer.gameObject);
+    }
+    
+    private void PlaySound(AudioClip _clip)
+    {
+        audioSource.pitch = Random.Range(0.95f, 1.05f);
+        if (_clip && audioSource) audioSource.PlayOneShot(_clip);
     }
 
 

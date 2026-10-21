@@ -56,6 +56,7 @@ public class Attack_AimedBurst : EnemyAttack
         {
             for (int i = 0; i < shotsPerBurst; i++)
             {
+                yield return new WaitUntil(() => !_enemy.IsStunned);
                 GameInstance.Get<BulletManager>().Fire(pattern, _enemy.depth, _enemy.LocalPosition);
                 yield return shotWait;
             }

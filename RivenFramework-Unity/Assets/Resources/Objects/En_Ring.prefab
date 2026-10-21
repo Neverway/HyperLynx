@@ -5129,7 +5129,7 @@ PrefabInstance:
     - target: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
         type: 3}
       propertyPath: m_Name
-      value: Ring
+      value: En_Ring
       objectReference: {fileID: 0}
     - target: {fileID: 2718573228792905327, guid: 9b090a8f1bc24837eaf4e567de14e00d,
         type: 3}
@@ -5508,6 +5508,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2117187346302663548}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &3005099805941211015 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3807090856694572283, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2117187346302663548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4525409992167236863 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
@@ -5586,6 +5592,11 @@ MonoBehaviour:
   knockReturnDelay: 0.15
   knockReturnTime: 0.5
   maxKnockDistance: 4
+  hitstunDuration: 0.2
+  shakeStrength: 0.1
+  hitFlashColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  hurt: {fileID: 8300000, guid: debe5c5c02d63ca2d8b43af74a36c80a, type: 3}
+  audioSource: {fileID: 3005099805941211015}
 --- !u!114 &-7083268888780541023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5607,6 +5618,8 @@ MonoBehaviour:
   squishHoldTime: 0.05
   squishRecoverTime: 0.4
   stompCooldown: 0.3
+  ignoreDamage: 0
+  allowKnockback: 1
 --- !u!114 &-6087743709287553331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5638,4 +5651,4 @@ MonoBehaviour:
   shots: 12
   interval: 0.5
   twistPerShot: 11
-  restTime: 2
+  restTime: 4

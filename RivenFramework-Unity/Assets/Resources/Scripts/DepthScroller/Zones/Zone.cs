@@ -62,6 +62,9 @@ public class Zone : MonoBehaviour
     public Gradient behindLayerDepthTint = CreateDefaultGradient();
     public Gradient behindSpriteDepthTint = CreateDefaultGradient();
     
+    [Header("Bullets")]
+    public List<Sprite> bulletSprites = new List<Sprite>();
+    
     [Header("Stepping")]
     
     public float stepDuration = 0.25f;
@@ -71,12 +74,16 @@ public class Zone : MonoBehaviour
     public bool allowStepInterrupt = true;
 
     public bool stepIgnoresTimeScale = false;
+    
+    private readonly Dictionary<int, int> depthBlocks = new Dictionary<int, int>();
 
 
     /*-----[ External Variables ]-------------------------------------------------------------------------------------*/
     [Header("Debugging")]
     [Tooltip("Controlled by the DepthController, this is what depth the player is currently at in the zone, so we know how to draw everything else")]
     public int currentDepth;
+    public bool showLayerLabels = true;
+    public Vector3 layerLabelOffset = new Vector3(0f, 0.5f, 0f);
     
 
     /*-----[ Internal Variables ]-------------------------------------------------------------------------------------*/
@@ -139,6 +146,38 @@ public class Zone : MonoBehaviour
         };
         #endif
     }
+    
+    #if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        if (!showLayerLabels) return;
+
+        var style = new GUIStyle(EditorStyles.boldLabel)
+        {
+            fontSize = 12,
+            alignment = TextAnchor.MiddleCenter
+        };
+
+        for (int i = 0; i < depthLayers.Count; i++)
+        {
+            GameObject layer = depthLayers[i];
+            if (!layer) continue;
+
+            bool isCurrent = i == currentDepth;
+            bool isBlocked = Application.isPlaying && IsDepthBlocked(i);
+
+            Color color = isCurrent ? Color.green : (isBlocked ? Color.red : Color.white);
+            if (!layer.activeInHierarchy) color.a = 0.4f;
+
+            style.normal.textColor = color;
+            Vector3 position = layer.transform.position;
+
+            Gizmos.color = color;
+            Gizmos.DrawWireSphere(position, 0.15f);
+            Handles.Label(position + layerLabelOffset, $"{i}", style);
+        }
+    }
+    #endif
 
     /*-----[ Internal Functions ]-------------------------------------------------------------------------------------*/
     private static Gradient CreateDefaultGradient()
@@ -340,6 +379,7 @@ public class Zone : MonoBehaviour
     }
 
     public int MaxDepth => GetMaxDepth(depthLayers.Count);
+    
 
     /*-----[ External Functions ]-------------------------------------------------------------------------------------*/
     public void ApplyLayout()
@@ -417,6 +457,7 @@ public class Zone : MonoBehaviour
         if (depthLayers.Count == 0) return false;
 
         targetDepth = Mathf.Clamp(targetDepth, 0, GetMaxDepth(depthLayers.Count));
+        targetDepth = LimitByBlockedDepths(targetDepth);
         if (targetDepth == currentDepth) return false;
         if (isShifting && !allowStepInterrupt) return false;
 
@@ -449,6 +490,31 @@ public class Zone : MonoBehaviour
         return true;
     }
 
+    public void BlockDepth(int _depth)
+    {
+        depthBlocks.TryGetValue(_depth, out int count);
+        depthBlocks[_depth] = count + 1;
+    }
+    
+    public void UnblockDepth(int _depth)
+    {
+        if (!depthBlocks.TryGetValue(_depth, out int count)) return;
+        if (count <= 1) depthBlocks.Remove(_depth);
+        else depthBlocks[_depth] = count - 1;
+    }
+    
+    public bool IsDepthBlocked(int _depth) => depthBlocks.ContainsKey(_depth);
+
+    private int LimitByBlockedDepths(int _target)
+    {
+        int step = _target > currentDepth ? 1 : -1;
+        for (int d = currentDepth + step; d != _target + step; d += step)
+        {
+            if (IsDepthBlocked(d)) return d - step;
+        }
+        return _target;
+    }
+    
     public void GetTints(float _relativeDepth, out Color _layerTint, out Color _spriteTint)
     {
         int gradientSpan = backgroundDrawDepth - 1;

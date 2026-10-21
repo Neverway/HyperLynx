@@ -151,6 +151,16 @@ public class BulletManager : MonoBehaviour
     {
         if (player) Gizmos.DrawWireSphere(player.transform.position+new Vector3(playerHitOffset.x, playerHitOffset.y, 0), playerHitRadius);
     }
+    
+    private Sprite PickBulletSprite()
+    {
+        if (zone && zone.bulletSprites != null && zone.bulletSprites.Count > 0)
+        {
+            var sprite = zone.bulletSprites[UnityEngine.Random.Range(0, zone.bulletSprites.Count)];
+            if (sprite) return sprite;
+        }
+        return bulletPrefab.sprite;
+    }
 
 
     /*-----[ External Functions ]-------------------------------------------------------------------------------------*/
@@ -173,6 +183,7 @@ public class BulletManager : MonoBehaviour
     {
         if (count >= bullets.Length) return;
         var renderer = pool.Count > 0 ? pool.Pop() : Instantiate(bulletPrefab, transform);
+        renderer.sprite = PickBulletSprite();
         float angle = angleDeg * Mathf.Deg2Rad;
         bullets[count++] = new Bullet
         {
