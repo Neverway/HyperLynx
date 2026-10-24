@@ -27,7 +27,7 @@ public class GI_WidgetManager : MonoBehaviour
 
     /*-----[ Reference Variables ]------------------------------------------------------------------------------------*/
     private const string CANVAS_GAMEOBJECT_TAG = "UserInterface";
-    private GameObject _canvas;
+    public GameObject _canvas;
     private GameObject Canvas
     {
         get

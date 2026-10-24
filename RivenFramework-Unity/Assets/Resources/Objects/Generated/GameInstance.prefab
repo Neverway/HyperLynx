@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 7051835688012922218}
   - component: {fileID: 5363501137258119802}
   - component: {fileID: 667853543068045272}
+  - component: {fileID: 4881780227883981751}
   m_Layer: 0
   m_Name: GameInstance
   m_TagString: Untagged
@@ -108,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0730303bd283634caa82a4cad8b71854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 0}
   widgets:
   - {fileID: 1507811972370413053, guid: 8c9da1ff2c0e3f8819b3be7b04866c01, type: 3}
   - {fileID: 5675289539813747590, guid: b463dd0fbb47ddea48e274f58e92b316, type: 3}
@@ -1115,6 +1117,22 @@ MonoBehaviour:
   playerHitRadius: 0.15
   playerHitOffset: {x: 0, y: 1}
   invulnerabilityTime: 0.75
+--- !u!114 &4881780227883981751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298151654670827244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf8ce16ebc8aa0668722021711090f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBoxPrefab: {fileID: 8458781761669948039, guid: c84148f3c5ffc4ad9a4c5d87630c7563,
+    type: 3}
+  choiceboxPrefab: {fileID: 320582496751065820, guid: 544a7175cc01556a19b33cf42959174a,
+    type: 3}
 --- !u!1001 &3624048239787505392
 PrefabInstance:
   m_ObjectHideFlags: 0

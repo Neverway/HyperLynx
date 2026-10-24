@@ -24403,6 +24403,7 @@ MonoBehaviour:
   land: {fileID: 8300000, guid: 214a6977169c54d1d9a92300dcfd8e94, type: 3}
   landHard: {fileID: 8300000, guid: 6d45c9b850a81a8bebb01dc2e5fa8c32, type: 3}
   audioSource: {fileID: 8080872849110942728}
+  landMinAirTime: 0.12
   viewCamera: {fileID: 0}
   zone: {fileID: 0}
 --- !u!114 &5058324293355595459
@@ -24465,11 +24466,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8985679000693322751}
     m_Modifications:
+    - target: {fileID: 855935262924336402, guid: c83ef03119f8ffcf9a9530b80bafb594,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1101076840, guid: bb3540b8cf5e7bca085ca3b2ba499338,
+        type: 3}
+    - target: {fileID: 1716532825283381984, guid: c83ef03119f8ffcf9a9530b80bafb594,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1101076840, guid: bb3540b8cf5e7bca085ca3b2ba499338,
+        type: 3}
     - target: {fileID: 3561135472431351936, guid: c83ef03119f8ffcf9a9530b80bafb594,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3839111929625365993, guid: c83ef03119f8ffcf9a9530b80bafb594,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 141158463, guid: bb3540b8cf5e7bca085ca3b2ba499338,
+        type: 3}
+    - target: {fileID: 5769745734111875916, guid: c83ef03119f8ffcf9a9530b80bafb594,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1445360455, guid: bb3540b8cf5e7bca085ca3b2ba499338,
+        type: 3}
     - target: {fileID: 6008981512273782230, guid: c83ef03119f8ffcf9a9530b80bafb594,
         type: 3}
       propertyPath: m_LocalRotation.w

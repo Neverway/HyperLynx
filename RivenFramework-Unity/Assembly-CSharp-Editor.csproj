@@ -62,6 +62,7 @@
      <Compile Include="Assets/Resources/Scripts/Integratable/Editor/CSGMeshCombinerTool.cs" />
      <Compile Include="Assets/RivenFramework/Scripts/Editor/ToolFrameworkManagerActorDatabase.cs" />
      <Compile Include="Assets/RivenFramework/Scripts/Editor/ToolFrameworkManagerCharacters.cs" />
+     <Compile Include="Assets/Resources/Scripts/CutsceneStuffs/Editor/CutsceneEditor.cs" />
      <Compile Include="Assets/Resources/Other/IntegratableSystems/ErryLib/ReflectionUtils/Editor/MonoScriptReader.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Compatibility/Editor/UnityEventDrawer.cs" />
      <Compile Include="Assets/Packages/SabreCSG-master/Scripts/Editor/Inspectors/CSGBuildContextInspector.cs" />
@@ -95,6 +96,7 @@
      <Folder Include="Assets/Resources/Other/IntegratableSystems/TextboxSystem/Editor" />
      <Folder Include="Assets/Packages/SabreCSG-master/Scripts/Brushes/CompoundBrushes/Editor" />
      <Folder Include="Assets/Packages/SabreCSG-master/Scripts/Compatibility/Editor" />
+     <Folder Include="Assets/Resources/Scripts/CutsceneStuffs/Editor" />
      <Folder Include="Assets/RivenFramework/Scripts/Editor" />
      <Folder Include="Assets/Packages/DOTween/Editor" />
      <Folder Include="Assets/Packages/DOTween/Editor/Imgs" />

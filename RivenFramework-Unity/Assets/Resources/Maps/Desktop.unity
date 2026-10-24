@@ -156,6 +156,91 @@ Transform:
   - {fileID: 911367882699651245}
   m_Father: {fileID: 1968521559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &307595800
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 394269191}
+    m_Modifications:
+    - target: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_Name
+      value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b090a8f1bc24837eaf4e567de14e00d, type: 3}
+--- !u!4 &307595801 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4054097890446054156, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+    type: 3}
+  m_PrefabInstance: {fileID: 307595800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &307595802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2570639244220686211, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+    type: 3}
+  m_PrefabInstance: {fileID: 307595800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &346948915
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +271,44 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1968521559}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &394269190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394269191}
+  m_Layer: 0
+  m_Name: '[Cutscenes]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &394269191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394269190}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1558630586}
+  - {fileID: 307595801}
+  - {fileID: 619864730}
+  - {fileID: 892997088}
+  - {fileID: 1346779495}
+  - {fileID: 1669089758}
+  - {fileID: 995600342}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397732725
 GameObject:
@@ -252,6 +375,185 @@ ReflectionProbe:
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
+--- !u!1 &619864728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 619864730}
+  - component: {fileID: 619864729}
+  m_Layer: 0
+  m_Name: Introduction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &619864729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619864728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b647a7e74a5d9f989339339e6d8bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - rid: 5066348910270742550
+  - rid: 5066348910270742528
+  - rid: 5066348910270742551
+  - rid: 5066348910270742529
+  - rid: 5066348910270742530
+  - rid: 5066348910270742534
+  - rid: 5066348910270742531
+  disableWhenFinished: 1
+  onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5066348910270742528
+      type: {class: ToggleObjectEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Haiypur Appears
+        duration: 1
+        targets:
+        - {fileID: 307595802}
+        active: 1
+    - rid: 5066348910270742529
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Hai there! I am Haiypur!
+        duration: 3
+        title: Haiypur
+        content: Hai there! I am Haiypur!
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
+    - rid: 5066348910270742530
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Wha- Where am I?
+        duration: 3
+        title: Linx
+        content: Wha- Where am I?
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 0}
+        targetIsLocalPlayer: 1
+    - rid: 5066348910270742531
+      type: {class: ShowChoiceboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Do you remember what you are?
+        duration: 3
+        query: Do you remember what you are?
+        choiceA: What?
+        choiceB: No.
+        choiceC: Where am I?
+        onChoiceA:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 892997087}
+              m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+              m_MethodName: SetActive
+              m_Mode: 6
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 1
+              m_CallState: 2
+        onChoiceB:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1346779494}
+              m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+              m_MethodName: SetActive
+              m_Mode: 6
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 1
+              m_CallState: 2
+        onChoiceC:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1669089757}
+              m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+              m_MethodName: SetActive
+              m_Mode: 6
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 1
+              m_CallState: 2
+        waitForChoice: 1
+    - rid: 5066348910270742534
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: I have a quick question for you!
+        duration: 3
+        title: Haiypur
+        content: I have a quick question for you!
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
+    - rid: 5066348910270742550
+      type: {class: TogglePlayerEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Play disabled
+        duration: 1
+        target: {fileID: 0}
+        active: 0
+    - rid: 5066348910270742551
+      type: {class: ToggleObjectEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Linx Appears
+        duration: 1
+        targets:
+        - {fileID: 1110481212}
+        active: 1
+--- !u!4 &619864730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619864728}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 394269191}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &780599959 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8312176268022740692, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+    type: 3}
+  m_PrefabInstance: {fileID: 6229514748479304377}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &855805484
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +617,109 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1968521559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &892997087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 892997088}
+  - component: {fileID: 892997089}
+  m_Layer: 0
+  m_Name: What?
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &892997088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892997087}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 394269191}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &892997089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892997087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b647a7e74a5d9f989339339e6d8bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - rid: 5066348910270742530
+  - rid: 5066348910270742535
+  - rid: 5066348910270742536
+  disableWhenFinished: 1
+  onFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 995600341}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 5066348910270742530
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: What is that supposed to mean?
+        duration: 3
+        title: Linx
+        content: What is that supposed to mean?
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 0}
+        targetIsLocalPlayer: 1
+    - rid: 5066348910270742535
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Interesting...
+        duration: 3
+        title: Haiypur
+        content: Interesting...
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
+    - rid: 5066348910270742536
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Don't worry about it silly!
+        duration: 3
+        title: Haiypur
+        content: Don't worry about it silly!
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
 --- !u!1001 &929916271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -437,6 +842,250 @@ MonoBehaviour:
     type: 3}
   startingZone: {fileID: 1137717531657683250, guid: b01e96be1e1164da3930942ac8435772,
     type: 3}
+--- !u!1 &995600341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 995600342}
+  - component: {fileID: 995600343}
+  m_Layer: 0
+  m_Name: Okay, let me explain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &995600342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995600341}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 394269191}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &995600343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995600341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b647a7e74a5d9f989339339e6d8bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - rid: 5066348910270742538
+  - rid: 5066348910270742540
+  - rid: 5066348910270742553
+  - rid: 5066348910270742555
+  - rid: 5066348910270742542
+  - rid: 5066348910270742548
+  - rid: 5066348910270742554
+  - rid: 5066348910270742552
+  - rid: 5066348910270742541
+  - rid: 5066348910270742543
+  - rid: 5066348910270742544
+  - rid: 5066348910270742545
+  - rid: 5066348910270742547
+  - rid: 5066348910270742556
+  - rid: 5066348910270742558
+  disableWhenFinished: 1
+  onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5066348910270742538
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Now that that is out of the way, I should probably explain the
+          situation.
+        duration: 3
+        title: Haiypur
+        content: Now that that is out of the way, I should probably explain the situation.
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
+    - rid: 5066348910270742540
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: You;
+        duration: 1
+        title: Haiypur
+        content: You...
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 1
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
+    - rid: 5066348910270742541
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Are mine!
+        duration: 2
+        title: Haiypur
+        content: Are mine!
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 2
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
+    - rid: 5066348910270742542
+      type: {class: PlayAnimationEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Haiypur_Snap
+        duration: 0.5
+        target: {fileID: 2027484737}
+        targetIsLocalPlayer: 0
+        stateName: Haiypur_Snap
+        triggerName: 
+        layer: 0
+        crossFade: 0.1
+    - rid: 5066348910270742543
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: 'This place is infected, so I need your help! '
+        duration: 4
+        title: Haiypur
+        content: 'This place is infected, so I need your help! '
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 4
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
+    - rid: 5066348910270742544
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: We'll need to work together to take down "The Big Bad Firewall"
+          to fix it!
+        duration: 4
+        title: Haiypur
+        content: We'll need to work together to take down "The Big Bad Firewall"
+          to fix it!
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 4
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
+    - rid: 5066348910270742545
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: But-
+        duration: 1
+        title: Linx
+        content: But-
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 1
+        targetTransform: {fileID: 0}
+        targetIsLocalPlayer: 1
+    - rid: 5066348910270742547
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: No more time for chit chat, we've gotta hurry and get you started!
+        duration: 4
+        title: Haiypur
+        content: No more time for chit chat, we've gotta hurry and get you started!
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 4
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
+    - rid: 5066348910270742548
+      type: {class: PlayAnimationEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Linx_Collar
+        duration: 1
+        target: {fileID: 780599959}
+        targetIsLocalPlayer: 0
+        stateName: Linx_Collar
+        triggerName: 
+        layer: 0
+        crossFade: 0.1
+    - rid: 5066348910270742552
+      type: {class: TogglePlayerEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Enable Player Linx
+        duration: 0.5
+        target: {fileID: 0}
+        active: 1
+    - rid: 5066348910270742553
+      type: {class: MoveObjectEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Lift Linx Proxy
+        duration: 0.5
+        target: {fileID: 1558630586}
+        targetIsLocalPlayer: 0
+        destination: {fileID: 0}
+        position: {x: 0, y: -1.5, z: 0}
+        moveTime: 1
+        ease: 4
+    - rid: 5066348910270742554
+      type: {class: ToggleObjectEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Hide Proxy Linx
+        duration: 0
+        targets:
+        - {fileID: 1110481212}
+        active: 0
+    - rid: 5066348910270742555
+      type: {class: MoveObjectEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Lift Linx
+        duration: 0
+        target: {fileID: 0}
+        targetIsLocalPlayer: 1
+        destination: {fileID: 0}
+        position: {x: 0, y: -1.5, z: 0}
+        moveTime: 0
+        ease: 4
+    - rid: 5066348910270742556
+      type: {class: MoveObjectEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: 
+        duration: 1
+        target: {fileID: 307595801}
+        targetIsLocalPlayer: 0
+        destination: {fileID: 0}
+        position: {x: 3.84, y: 1.26, z: 0}
+        moveTime: 1
+        ease: 4
+    - rid: 5066348910270742558
+      type: {class: ShowChoiceboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: 
+        duration: 0.5
+        query: When you are ready to begin, double click the Trash application on
+          the desktop.
+        choiceA: Ok
+        choiceB: 
+        choiceC: 
+        onChoiceA:
+          m_PersistentCalls:
+            m_Calls: []
+        onChoiceB:
+          m_PersistentCalls:
+            m_Calls: []
+        onChoiceC:
+          m_PersistentCalls:
+            m_Calls: []
+        waitForChoice: 1
 --- !u!1 &1025680274
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +1119,12 @@ Transform:
   - {fileID: 929916272}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1110481212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6780310119936477497, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+    type: 3}
+  m_PrefabInstance: {fileID: 6229514748479304377}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1261351665
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +1157,96 @@ Transform:
   - {fileID: 397732726}
   m_Father: {fileID: 1968521559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1346779494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346779495}
+  - component: {fileID: 1346779496}
+  m_Layer: 0
+  m_Name: No.
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1346779495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346779494}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 394269191}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1346779496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346779494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b647a7e74a5d9f989339339e6d8bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - rid: 5066348910270742529
+  - rid: 5066348910270742537
+  disableWhenFinished: 1
+  onFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 995600341}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 5066348910270742529
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: No, I can't remember much of anything...
+        duration: 3
+        title: Linx
+        content: No, I can't remember much of anything...
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 0}
+        targetIsLocalPlayer: 1
+    - rid: 5066348910270742537
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Good! That's alright!
+        duration: 3
+        title: Haiypur
+        content: Good! That's alright!
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
 --- !u!1001 &1357732665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -688,6 +1433,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 255
   m_TargetDisplay: 0
+--- !u!4 &1558630586 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5041553738512041398, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+    type: 3}
+  m_PrefabInstance: {fileID: 6229514748479304377}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1629004120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -709,7 +1460,7 @@ PrefabInstance:
     - target: {fileID: 5805205767007618456, guid: 266b7e4a539bd7f1ca4600242cd52380,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.523
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5805205767007618456, guid: 266b7e4a539bd7f1ca4600242cd52380,
         type: 3}
@@ -762,6 +1513,110 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1629004120}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1669089757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1669089758}
+  - component: {fileID: 1669089759}
+  m_Layer: 0
+  m_Name: Where am I?
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1669089758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669089757}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 394269191}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1669089759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669089757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b647a7e74a5d9f989339339e6d8bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - rid: 5066348910270742530
+  - rid: 5066348910270742529
+  - rid: 5066348910270742538
+  disableWhenFinished: 1
+  onFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 995600341}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 5066348910270742529
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: My, you sure are a curious one!
+        duration: 3
+        title: Haiypur
+        content: My, you sure are a curious one!
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
+    - rid: 5066348910270742530
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: Where am I?
+        duration: 3
+        title: Linx
+        content: Where am I?
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 0}
+        targetIsLocalPlayer: 1
+    - rid: 5066348910270742538
+      type: {class: ShowTextboxEvent, ns: , asm: Assembly-CSharp}
+      data:
+        displayInfo: We'll get to that silly, so don't you worry about that right
+          now!
+        duration: 3
+        title: Haiypur
+        content: We'll get to that silly, so don't you worry about that right now!
+        audioClip: {fileID: 0}
+        waitForAudioClipToFinish: 0
+        textboxLifetime: 3
+        targetTransform: {fileID: 307595801}
+        targetIsLocalPlayer: 0
 --- !u!224 &1797165761 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2280372157298583087, guid: fe684846353bbd2c78d7fd52def9c340,
@@ -872,6 +1727,12 @@ Transform:
   - {fileID: 855805485}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2027484737 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7878449999030701518, guid: 9b090a8f1bc24837eaf4e567de14e00d,
+    type: 3}
+  m_PrefabInstance: {fileID: 307595800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &911367882699651245
 Transform:
   m_ObjectHideFlags: 0
@@ -1064,6 +1925,152 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe684846353bbd2c78d7fd52def9c340, type: 3}
+--- !u!1001 &5557880239655360818
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1207806693973015910, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_Name
+      value: Glitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207806693973015910, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930641586967016920, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930641586967016920, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930641586967016920, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930641586967016920, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930641586967016920, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930641586967016920, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930641586967016920, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930641586967016920, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930641586967016920, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930641586967016920, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d9e2d60bbeaaa6d9ba9b4caacb137c6, type: 3}
+--- !u!1001 &6229514748479304377
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 394269191}
+    m_Modifications:
+    - target: {fileID: 5041553738512041398, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041553738512041398, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041553738512041398, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041553738512041398, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041553738512041398, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041553738512041398, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041553738512041398, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041553738512041398, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041553738512041398, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041553738512041398, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780310119936477497, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_Name
+      value: CharacterLinx Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780310119936477497, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 47c5cedb7f6b0d46eacc51b5ebdcf549, type: 3}
 --- !u!114 &8649991841961045722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,3 +2173,5 @@ SceneRoots:
   - {fileID: 1025680275}
   - {fileID: 1968521559}
   - {fileID: 1813336192}
+  - {fileID: 394269191}
+  - {fileID: 5557880239655360818}
